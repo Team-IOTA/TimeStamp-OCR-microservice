@@ -40,8 +40,7 @@ jobs:
     - name: Build & Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: ridmatp/classifie-ml-microservice
-        tag: latest
+        image: ridmatp/classifie-ml-microservice 
         registry: docker.io
         username: ${{secrets.DOCKER_USERNAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
