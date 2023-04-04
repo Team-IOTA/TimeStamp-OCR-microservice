@@ -26,6 +26,6 @@ class AudioExtract:
         transcript = r.recognize_google(audio)
 
         # Print the transcript
-        print(transcript)
+        return transcript
         
   

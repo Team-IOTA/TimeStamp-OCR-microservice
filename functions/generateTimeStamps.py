@@ -78,7 +78,7 @@ class TimeStamp :
                 filename = f'frame_{frame_num}_{time.strftime("%H%M%S", time.gmtime(timestamp / 1000))}.jpg'
                 cv2.imwrite(unique_frames_dir + '/' + filename, frame)
 
-                obj = {"topic":top_text,"timestamp":time.strftime("%H:%M:%S", time.gmtime(timestamp / 1000)) , "image":filename}
+                obj = {"topic":top_text,"timestamp":time.strftime("%H:%M:%S", time.gmtime(timestamp / 1000)) , "image":"C:\\Users\\Ridma Premaratne\\Desktop\SDGP\\timestampOCR\\data" + "\\" + filename}
                
                 responses.append(obj)
                
@@ -88,11 +88,5 @@ class TimeStamp :
             prev_frame = frame.copy()
             frame_num += 1
 
-        cap.release()
-        # Convert the list of ResponseData objects into a list of dictionaries
-       
-
-        # Serialize the list of dictionaries into a JSON formatted string
-        
-    
+        cap.release()    
         return responses
