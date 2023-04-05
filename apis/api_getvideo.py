@@ -1,6 +1,7 @@
 import os
 from flask import Blueprint,request, jsonify
 from functions.generateTimeStamps import TimeStamp
+from functions.generateSummery import generateSummery
 from functions.extractAudiio import AudioExtract
 
 api_getVideo = Blueprint('api_getVideo', __name__)
@@ -17,8 +18,10 @@ def post_data():
     video_path = os.path.join('uploads', video_file.filename)
     video_file.save(video_path)
 
+    
     #videoPath = data['videopath']
     responses = TimeStamp.generateTimeStamp(video_path)
+    summeries = generateSummery(video_path,len(responses))
     #AudioExtract.extract_audio(videoPath)
     
-    return jsonify( responses)
+    return jsonify({"responses" : responses , "Summeries" : summeries})

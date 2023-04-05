@@ -1,0 +1,26 @@
+Hello and good day to you I'm with my primary from informatics institute of technology Sri Lanka affiliated with university of Westminster UK or.
+So we had to my order and our project is classified.
+So I would the the names of the team members can be set below with my product management accountability about a local game and consul free locate.
+So let's my one two problems that we plan to address with the world project so these are the problems while students wasting a lot of time to find the topic that they require from lecture recordings with ability for the students to get a quick idea on the topics discussed keeping not about a certain part of the lecture recording itself so these other problems have been addressed with cover so they shipped so solution can be seen.
+Aw here.
+So.
+%HESITATION a student first uploads the lecture according to our system I had this video is tense and for for processing then this video of will be divided into topics.
+So I had after the video is divided into topics timestamps will be created for each topic so that the student will have the ability to go through the entire lecture.
+With those times types easily.
+Then after this survey reduce divided into two parts so.
+Summary use will be created for each topic from the transcript that is obtained from the audio of this survey.
+Next recording and.
+Then as an additional feature there is a feature about the student can add custom notes to the lecture recording so he or she can now.
+Oh look at them.
+When watching the.
+Picture next time.
+So those other.
+Basic features and all proposed solution to those problems.
+So the features soft this can be seen as follows as I've described earlier or other managers are generating time stands for topics or they're not generating somebody for each topic and I didn't custom nodes of for the next recording.
+Then this is just a simple your structure of for the.
+Project that we've done to using figure.
+Aw and these other technologies W. plan to use.
+%HESITATION.
+For for the frontend regarding slider back can depart then and go for library spy distractor forty yard spots %HESITATION for natural language processing open saver for preprocessing and four times time generation.
+And for the database replied to use Mongol and father to will switch your studio code get and get top so that's set for a demonstration thank you for listening and have a nice day.
+Thank you.
