@@ -38,6 +38,7 @@ jobs:
     #  run: |
     #   pytest
     - name: Build & Push Docker Image
+      run : pip install --upgrade pip
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: ridmatp/classifie-ml-microservice 
