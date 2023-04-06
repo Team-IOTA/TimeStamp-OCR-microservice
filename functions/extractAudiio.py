@@ -6,6 +6,7 @@ nltk.download('averaged_perceptron_tagger')
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 
+
 # Load the video file
 video_path = r"C:\Users\Ridma Premaratne\Desktop\SDGP\timestampOCR\video\imaginecupvideo.mp4"
 video = mp.VideoFileClip(video_path)
