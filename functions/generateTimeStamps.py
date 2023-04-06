@@ -78,7 +78,7 @@ class TimeStamp :
                 filename = f'frame_{frame_num}_{time.strftime("%H%M%S", time.gmtime(timestamp / 1000))}.jpg'
                 cv2.imwrite(unique_frames_dir + '/' + filename, frame)
 
-                obj = {"topic":top_text,"timestamp":time.strftime("%H:%M:%S", time.gmtime(timestamp / 1000)) , "image":"C:\\Users\\Ridma Premaratne\\Desktop\SDGP\\timestampOCR\\data" + "\\" + filename}
+                obj = {"topic":top_text,"timestamp":time.strftime("%H:%M:%S", time.gmtime(timestamp / 1000)) , "image":"C:\\Users\\Ridma Premaratne\\Desktop\SDGP\\timestampOCR\\data" + "\\" + filename , "summary":"" , "timeInSeconds":0}
                
                 responses.append(obj)
                

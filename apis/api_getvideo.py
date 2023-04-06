@@ -1,8 +1,9 @@
 import os
+import re
 from flask import Blueprint,request, jsonify
 from functions.generateTimeStamps import TimeStamp
 from functions.generateSummery import generateSummery
-from functions.extractAudiio import AudioExtract
+
 
 api_getVideo = Blueprint('api_getVideo', __name__)
 
@@ -20,8 +21,48 @@ def post_data():
 
     
     #videoPath = data['videopath']
+    deleteData()
     responses = TimeStamp.generateTimeStamp(video_path)
-    summeries = generateSummery(video_path,len(responses))
+
+    unique_topics = []
+    unique_objects = []
+
+    for obj in responses:
+        topic = obj['topic']
+        if topic not in unique_topics:
+            unique_topics.append(topic)
+            unique_objects.append(obj)
+
+    summeries = generateSummery(video_path,len(unique_objects))
     #AudioExtract.extract_audio(videoPath)
+    unique_objects.insert(0,{"topic":"Introduction","timestamp":"00:00:00" , "image":" " , "summary":" " , "timeInSeconds":0})
+    for index,obj in enumerate(unique_objects):
+        time_string = obj['timestamp']
+        hours, minutes, seconds = map(int, time_string.split(":"))
+        total_seconds = (hours * 60 + minutes) * 60 + seconds
+        if index < len(unique_objects)-1:
+            obj['summary']  = re.sub(r'<.*?>', '', summeries[index])
+        obj['timeInSeconds'] = total_seconds
     
-    return jsonify({"responses" : responses , "Summeries" : summeries})
+    return jsonify({"data" : unique_objects })
+
+def deleteData() :
+    folder_path = "data"
+
+    # iterate over all files and folders in the folder
+    for filename in os.listdir(folder_path):
+
+        # create the full path of the file or folder
+        file_path = os.path.join(folder_path, filename)
+
+        # if the item is a file, delete it
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+
+        # if the item is a folder, delete its contents recursively
+        elif os.path.isdir(file_path):
+            for sub_filename in os.listdir(file_path):
+                sub_file_path = os.path.join(file_path, sub_filename)
+                os.remove(sub_file_path)
+
+            os.rmdir(file_path)
