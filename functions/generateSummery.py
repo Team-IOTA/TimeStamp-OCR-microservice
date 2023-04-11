@@ -42,27 +42,6 @@ def generateSummery(video_path,num) :
     audio.write_audiofile("audio.wav")
     print("Completed")
 
-    # Using API keys
-    #apikey = 'O_Z3Ib3vGgzGFvwV_l4ztFjptvN5nLnb3JaDuD7lajho'
-    #url = 'https://api.au-syd.speech-to-text.watson.cloud.ibm.com/instances/ce01a695-b6c4-4bef-ac76-8a252c64057a'
-
-    # Setup Speech to text service
-    #authenticator = IAMAuthenticator(apikey)
-    #stt = SpeechToTextV1(authenticator=authenticator)
-    #stt.set_service_url(url)
-
-    # Extracting text out of audio
-    #with open('audio.wav', 'rb') as f:
-    #    res = stt.recognize(audio=f, content_type='audio/wav', model='en-US_NarrowbandModel').get_result()
-
-    #text = [result['alternatives'][0]['transcript'].rstrip() + '.\n' for result in res['results']]
-
-    # Formatting text and output to a text file
-    #text = [para[0].title() + para[1:] for para in text]
-    #transcript = ''.join(text)
-    #with open('lecture_transcript.txt', 'w') as out:
-    #    out.writelines(transcript)
-
     audio_url = upload(video_path)
 
     trans = save_transcript(audio_url)
